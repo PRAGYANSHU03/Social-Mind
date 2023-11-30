@@ -26,11 +26,11 @@ import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
 const Navbar = () => {
-  const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
+  const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false); //mobile menu
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)"); // to check if screen size is smaller than 1000px builtin mui
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Social Mind
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween

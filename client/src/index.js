@@ -25,7 +25,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER], //ignore some kind of warning while using persist
       },
     }),
 });
@@ -34,7 +34,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistStore(store)}>
+      <PersistGate loading={null} persistor={persistStore(store)}> 
         <App />
       </PersistGate>
     </Provider>
